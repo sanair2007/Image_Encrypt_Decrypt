@@ -9,4 +9,8 @@ Image Encrypt Decrypt is a small tool for applying a rudimentary encryption / de
 This tool was made as I was interested in having a local implementation of an encryption / decryption tool as seen on various websites, so that it can be run on a mobile device.
 
 ## How does it work?
+The app is essentially a basic Android WebView wrapper around a local HTML + CSS + Javascript file, in order to simplify future work and porting to other platforms.
 The logic used is an implementation similar to most sites offering similar tools, the password string is first hashed using `cyrb128` to give a 128-bit seed to a pseudorandom generator using `mulberry32`. The values generated are XORed with the pixels of the image to create the result. Since the process is symmetric, encryption and decryption are effectively the same operation.
+
+## What additions will be made in the future?
+Work will be done in order to support encryption and decryption of files in a manner compatible with the implementations served on sites such as [ImageOnline](https://imageonline.co/), with further goals of supporting files in `.enc` and `.txt` formats.
